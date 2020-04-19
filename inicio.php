@@ -1,12 +1,12 @@
-      <!--header-->
-      <?php require_once 'include/encabezado.php'; ?>
+<!--header-->
+<?php require_once 'include/encabezado.php'; ?>
 
-      <!--sidebar-->
+<!--sidebar-->
       
-         <!--formulario-->
-         <?php require_once 'include/formul.php'; ?>
-
-         <div class="principal">
+   <!--formulario-->
+   <?php require_once 'include/formul.php'; ?>
+   
+   <div class="principal">
             <h2 class="text-center">ELIEXER</h2>
 
             <article class="entrada">
@@ -42,9 +42,9 @@
             <div class="verentradas">
                <button type="button" class="btn btn-outline-secondary">Ver entradas</button>
             </div>
-         </div>
+   </div>
 
-      <!--footer-->
-      <?php require_once 'include/pie.php'; ?>
+<!--footer-->
+<?php require_once 'include/pie.php'; ?>
 
   

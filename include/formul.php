@@ -27,7 +27,8 @@
       <!--registro-->
       <div id="registro" class="bloque">
 
-      <?php if(isset($_SESSION["errores"])): ?>
+      <?php // se recibe todo los errores de la validacion de registro
+      if(isset($_SESSION["errores"])): ?>
              <?php  var_dump($_SESSION["errores"]); ?>
       <?php endif; ?>
 
@@ -37,11 +38,14 @@
             <div class="form-group row">
                <div class="col">
                   <input type="text" name="fname" class="form-control" placeholder="First name">
-                  <?php echo mostrarerror($_SESSION["errores"], "nombre");?>
+                  <?php echo isset($_SESSION["errores"]) ? mostrarerror($_SESSION["errores"],"nombre") : ""; 
+                  //se incoca la function mostrarerror(array asociativo, indice) ?>
                </div>
+
                <div class="col">
                   <input type="text" name="lname" class="form-control" placeholder="Last name">
                </div>
+
             </div>
 
             <div class="form-group row">
@@ -51,6 +55,7 @@
                      value="email@example.com">
                </div>
             </div>
+
             <div class="form-group row">
                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
                <div class="col-sm-10">
@@ -59,7 +64,10 @@
             </div>
 
             <button type="submit" value="" class="btn btn-primary">Sign in</button>
+         
          </form>
+
+         <?php borrarerror(); ?>
       </div>
 
    </aside>
