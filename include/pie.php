@@ -1,3 +1,6 @@
+   <div class="clear-fix"></div>
+   </div>
+
    <footer class="pie">
       <div class="iconos">
          <i class="fab fa-facebook"></i>
@@ -28,5 +31,4 @@
 
 
    </body>
-
    </html>

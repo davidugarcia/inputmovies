@@ -46,13 +46,13 @@ if(isset($_POST)){
    //var_dump($errores);
 
 
-   $guardar_usuarios = false;
+   $guardar_usuario = false;
 
    if(count($errores) == 0){
-      $guardar_usuarios = true;
+      $guardar_usuario = true;
    }else{
       $_SESSION["errores"] = $errores;
-      header("location:inicio.php");
+      header("location: inicio.php");
    };
   
 };

@@ -58,6 +58,4 @@
       </ul>
    </nav>
 
-</body>
-
-</html>
+   <div class="contenedor">

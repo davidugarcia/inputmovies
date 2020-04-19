@@ -2,8 +2,7 @@
       <?php require_once 'include/encabezado.php'; ?>
 
       <!--sidebar-->
-
-      <div class="contenedor">
+      
          <!--formulario-->
          <?php require_once 'include/formul.php'; ?>
 
@@ -39,12 +38,11 @@
                   </p>
                </a>
             </article>
+
             <div class="verentradas">
                <button type="button" class="btn btn-outline-secondary">Ver entradas</button>
             </div>
          </div>
-         <div class="clear-fix"></div>
-      </div>
 
       <!--footer-->
       <?php require_once 'include/pie.php'; ?>

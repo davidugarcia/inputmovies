@@ -1,3 +1,5 @@
+   <?php  require_once 'include/helper.php'; ?>
+   
    <!--form-->
    <aside class="sidebar">
       <!--identificar-->
@@ -35,7 +37,7 @@
             <div class="form-group row">
                <div class="col">
                   <input type="text" name="fname" class="form-control" placeholder="First name">
-                  <?php  mostrarerror($_SESSION["errores"], "nombre"); ?>
+                  <?php echo mostrarerror($_SESSION["errores"], "nombre");?>
                </div>
                <div class="col">
                   <input type="text" name="lname" class="form-control" placeholder="Last name">
@@ -61,7 +63,3 @@
       </div>
 
    </aside>
-
-</body>
-
-</html>
