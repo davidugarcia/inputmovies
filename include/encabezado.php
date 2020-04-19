@@ -1,6 +1,4 @@
-<?php
-require_once 'conexion.php';
-?>
+<?php require_once 'conexion.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,10 +6,24 @@ require_once 'conexion.php';
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>Blog</title>
+
+   <!--style-->
+   <link rel="stylesheet" href="inicio.css">
+
+   <!--boostrap-->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+   <!--fontaawesome-->
+   <script defer src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"
+      integrity="sha384-ukiibbYjFS/1dhODSWD+PrZ6+CGCgf8VbyUH7bQQNUulL+2r59uGYToovytTf4Xm" crossorigin="anonymous">
+   </script>
 </head>
 
 <body>
+
+   <div class="container contenedor">
 
    <!--header pagina-->
    <header id="cabecera" class="text-center">
