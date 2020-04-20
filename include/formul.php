@@ -27,10 +27,10 @@
       <!--registro-->
       <div id="registro" class="bloque">
 
-      <?php // se recibe todo los errores de la validacion de registro
-      if(isset($_SESSION["errores"])): ?>
+      <?php // prueba -- se recibe todo los errores de la validacion de registro para mostrarlos
+      /*if(isset($_SESSION["errores"])): ?>
              <?php  var_dump($_SESSION["errores"]); ?>
-      <?php endif; ?>
+      <?php endif; */?>
 
          <h3>Sing up</h3>
          <form action="registro.php" method="POST">
@@ -38,12 +38,14 @@
             <div class="form-group row">
                <div class="col">
                   <input type="text" name="fname" class="form-control" placeholder="First name">
-                  <?php echo isset($_SESSION["errores"]) ? mostrarerror($_SESSION["errores"],"nombre") : ""; 
-                  //se incoca la function mostrarerror(array asociativo, indice) ?>
+                  <?php  //function muestra el error o vacio helper.php
+                  echo isset($_SESSION["errores"]) ? mostrarerror($_SESSION["errores"], "nombre") : ""; 
+                  ?>
                </div>
 
                <div class="col">
                   <input type="text" name="lname" class="form-control" placeholder="Last name">
+                  <?php echo isset($_SESSION["errores"]) ? mostrarerror($_SESSION["errores"], "apellido") : ""; ?>
                </div>
 
             </div>
@@ -53,6 +55,7 @@
                <div class="col-sm-10">
                   <input type="text" name="email" readonly class="form-control-plaintext" id="staticEmail"
                      value="email@example.com">
+                     <?php echo isset($_SESSION["errores"]) ? mostrarerror($_SESSION["errores"], "correo") : ""; ?>
                </div>
             </div>
 
@@ -60,14 +63,17 @@
                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
                <div class="col-sm-10">
                   <input type="password" name="pass" class="form-control" id="inputPassword">
+                  <?php echo isset($_SESSION["errores"]) ? mostrarerror($_SESSION["errores"], "contra") : ""; ?>
                </div>
             </div>
 
             <button type="submit" value="" class="btn btn-primary">Sign in</button>
          
          </form>
-
-         <?php borrarerror(); ?>
+         
+         <?php // function para borrar los errores helper.php
+          borrarErrores();
+          ?>
       </div>
 
    </aside>

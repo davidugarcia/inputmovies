@@ -1,8 +1,11 @@
+<!--los require_once sirven para poder segmentar desde varios file
+un solo contenido-->
+
 <!--header-->
 <?php require_once 'include/encabezado.php'; ?>
 
 <!--sidebar-->
-      
+
    <!--formulario-->
    <?php require_once 'include/formul.php'; ?>
    

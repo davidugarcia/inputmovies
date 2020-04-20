@@ -9,12 +9,10 @@ if(isset($_POST)){
    $correo = isset($_POST["email"]) ? $_POST["email"] : false;
    $contra = isset($_POST["pass"]) ? $_POST["pass"] : false;
 
-   
-   var_dump($_POST);
-
    //array errores
    $errores = array();
 
+   //validar nombre
    if(!empty($nombre) && !is_numeric($nombre) && !preg_match( "/[0-9]/",$nombre)){
       $nombre_validate = true;
    } else{
@@ -22,40 +20,39 @@ if(isset($_POST)){
       $errores["nombre"] = "nombre no validado";
    };
 
+    //validar appellido
    if(!empty($apellido) && !is_numeric($apellido) && !preg_match( "/[0-9]/",$apellido)){
       $apellido_validate = true;
    } else{
       $apellido_validate = false;
-      $errores["apellido"] = "apellido no validado";
+      $errores["apellido"] = "apellido no valido";
    };
 
+    //validar correo
    if(!empty($correo) &&  filter_var($correo, FILTER_VALIDATE_EMAIL)){
       $correo_validate = true;
    } else{
       $correo_validate = false;
-      $errores["correo"] = "correo no validado";
+      $errores["correo"] = "correo no valido";
    };
-
+   //validar contraseña
    if(!empty($contra)){
       $contra_validate = true;
    } else{
       $contra_validate = false;
-      $errores["correo"] = "contraseña no validado";
+      $errores["contra"] = "contraseña no valida";
    };
 
-   //var_dump($errores);
-
-
+   // enviar los errores si se validaron mal 
    $guardar_usuario = false;
-
+   
    if(count($errores) == 0){
       $guardar_usuario = true;
    }else{
+      //envia el arreglo por la variable superglobal
       $_SESSION["errores"] = $errores;
       header("location: inicio.php");
    };
   
 };
-
-
 ?>
