@@ -27,10 +27,10 @@
       <!--registro-->
       <div id="registro" class="bloque">
 
-      <?php // prueba -- se recibe todo los errores de la validacion de registro para mostrarlos
-      /*if(isset($_SESSION["errores"])): ?>
+         <?php // prueba -- se recibe todo los errores de la validacion de registro para mostrarlos
+         /*if(isset($_SESSION["errores"])): ?>
              <?php  var_dump($_SESSION["errores"]); ?>
-      <?php endif; */?>
+         <?php endif; */?>
 
          <h3>Sing up</h3>
          <form action="registro.php" method="POST">
@@ -38,7 +38,7 @@
             <div class="form-group row">
                <div class="col">
                   <input type="text" name="fname" class="form-control" placeholder="First name">
-                  <?php  //function muestra el error o vacio helper.php
+                  <?php  //function muestra el error o vacio de file helper.php
                   echo isset($_SESSION["errores"]) ? mostrarerror($_SESSION["errores"], "nombre") : ""; 
                   ?>
                </div>
@@ -71,7 +71,7 @@
          
          </form>
          
-         <?php // function para borrar los errores helper.php
+         <?php // function para borrar los errores file helper.php
           borrarErrores();
           ?>
       </div>

@@ -1,5 +1,4 @@
-<!--los require_once sirven para poder segmentar desde varios file
-un solo contenido-->
+<!--require_once sirven para poder segmentar un file-->
 
 <!--header-->
 <?php require_once 'include/encabezado.php'; ?>

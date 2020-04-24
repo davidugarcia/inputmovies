@@ -35,6 +35,7 @@ if(isset($_POST)){
       $correo_validate = false;
       $errores["correo"] = "correo no valido";
    };
+   
    //validar contraseña
    if(!empty($contra)){
       $contra_validate = true;
