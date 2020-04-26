@@ -1,7 +1,14 @@
 <?php
-session_start();
 
 if(isset($_POST)){
+
+   // Conexión a la base de datos
+   require_once 'include/conexion.php';
+   
+   // Iniciar sesión --- conexion.php line 15
+	if(!isset($_SESSION)){
+		session_start();
+	}
 
    //recorger valores
    $nombre = isset($_POST["fname"]) ? $_POST["fname"] : false;
@@ -44,16 +51,31 @@ if(isset($_POST)){
       $errores["contra"] = "contraseña no valida";
    };
 
-   // enviar los errores si se validaron mal 
+   // validar y enviar datos db o mostrar alert de errores
    $guardar_usuario = false;
    
    if(count($errores) == 0){
       $guardar_usuario = true;
+
+      // Cifrar la contraseña
+		$password_segura = password_hash($contra, PASSWORD_BCRYPT, ['cost'=>4]);
+		
+		// insertar usuarios en la tabla de BBDD llamada inicio
+		$sql = "INSERT INTO usuarios VALUES(null, '$nombre', '$apellido', '$correo', '$password_segura', CURDATE());";
+      $guardar = mysqli_query($con, $sql);
+      
+      if($guardar){
+			$_SESSION['completado'] = "El registro se ha completado con éxito";
+		}else{
+			$_SESSION['errores']['general'] = "Fallo al guardar el usuario!!";
+		}
+   
    }else{
       //envia el arreglo por la variable superglobal
       $_SESSION["errores"] = $errores;
-      header("location: inicio.php");
    };
   
 };
+
+header("location: inicio.php");
 ?>

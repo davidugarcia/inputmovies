@@ -9,8 +9,8 @@
             <div class="form-group row">
                <label for="email" class="col-sm-2 col-form-label">Email</label>
                <div class="col-sm-10">
-                  <input type="text" readonly class="form-control-plaintext" id="Email" name="email"
-                     value="email@example.com">
+                  <input type="text" class="form-control" id="Email" name="email"
+                  placeholder="email@example.com">
                </div>
             </div>
 
@@ -27,12 +27,20 @@
       <!--registro-->
       <div id="registro" class="bloque">
 
-         <?php // prueba -- se recibe todo los errores de la validacion de registro para mostrarlos
-         /*if(isset($_SESSION["errores"])): ?>
-             <?php  var_dump($_SESSION["errores"]); ?>
-         <?php endif; */?>
-
          <h3>Sing up</h3>
+
+         <!-- Mostrar errores -->
+		<?php if(isset($_SESSION['completado'])): ?>
+			<div class="alerta alerta-exito">
+				<?=$_SESSION['completado']?>
+			</div>
+
+		<?php elseif(isset($_SESSION['errores']['general'])): ?>
+			<div class="alerta alerta-error">
+				<?=$_SESSION['errores']['general']?>
+			</div>
+		<?php endif; ?>
+
          <form action="registro.php" method="POST">
 
             <div class="form-group row">
@@ -53,8 +61,8 @@
             <div class="form-group row">
                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
                <div class="col-sm-10">
-                  <input type="text" name="email" readonly class="form-control-plaintext" id="staticEmail"
-                     value="email@example.com">
+                  <input type="text" name="email" class="form-control" id="staticEmail"
+                     placeholder="email@example.com">
                      <?php echo isset($_SESSION["errores"]) ? mostrarerror($_SESSION["errores"], "correo") : ""; ?>
                </div>
             </div>
