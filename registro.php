@@ -11,10 +11,12 @@ if(isset($_POST)){
 	}
 
    //recorger valores
-   $nombre = isset($_POST["fname"]) ? $_POST["fname"] : false;
-   $apellido = isset($_POST["lname"]) ? $_POST["lname"] : false;
-   $correo = isset($_POST["email"]) ? $_POST["email"] : false;
-   $contra = isset($_POST["pass"]) ? $_POST["pass"] : false;
+   // ver si existen y escapar datos
+
+   $nombre = isset($_POST['fname']) ? mysqli_real_escape_string($con, $_POST['fname']) : false;
+	$apellido = isset($_POST['lname']) ? mysqli_real_escape_string($con, $_POST['lname']) : false;
+	$correo = isset($_POST['email']) ? mysqli_real_escape_string($con, trim($_POST['email'])) : false;
+	$contra = isset($_POST['pass']) ? mysqli_real_escape_string($con, $_POST['pass']) : false;
 
    //array errores
    $errores = array();
