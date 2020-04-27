@@ -4,7 +4,7 @@
 function mostrarerror($errores, $campo){
    $alert ="";
 if(isset($errores[$campo]) && !empty($campo)){
-   $alert = '<div class ="alert alert-error">'.$errores[$campo].'</div>';
+   $alert = '<div style = "margin: 5px"; class="alert alert-warning" role="alert">'. $errores[$campo] .'</div>';
 };
 
 return $alert;
