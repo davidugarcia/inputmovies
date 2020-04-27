@@ -2,16 +2,23 @@
    </div>
 
    <footer class="pie">
-      <div class="iconos">
-         <i class="fab fa-facebook"></i>
-         <i class="fas fa-mobile-alt"></i>
-         <i class="fab fa-github-alt"></i>
-         <i class="fab fa-whatsapp"></i>
-         <i class="far fa-address-card"></i>
-      </div>
+      <div class="row">
+         <div class="col-lg-12">
+            <div class="iconos d-flex flex-wrap justify-content-around">
+               
+               <div><i class="fas fa-mobile-alt"></i></div>
+               <div><i class="fab fa-github-alt"></i></div>
+               <div><i class="fab fa-whatsapp"></i></div>
 
-      <div class="texto">
-         <h5><i class="fas fa-laptop-code"></i> <span>desarrollado por eliexer urbina &copy copy</span></h5>
+            </div>
+
+            <div class="texto">
+               <h5><i class="fas fa-laptop-code"></i><span>Desarrollado por Eliexer Garcia &copycopy</span><i class="fas fa-laptop-code"></i></h5>
+            </div>
+
+         </div>
+
+
       </div>
 
    </footer>
@@ -31,4 +38,5 @@
 
 
    </body>
+
    </html>

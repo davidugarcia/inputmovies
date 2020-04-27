@@ -26,6 +26,11 @@
     src: url(./imgyfont/Qualy.ttf);
 }
 
+@font-face {
+    font-family: "eli4";
+    src: url(./imgyfont/Blackboard.ttf);
+}
+
 
 /*header pagina*/
 
@@ -107,3 +112,22 @@ article h3 {
 
 
 /*footer*/
+
+.iconos {
+    background-color: #e4d1c4;
+}
+
+.iconos div {
+    font-size: 40px;
+}
+
+.texto {
+    margin: 5px;
+    padding: 5px;
+    font-family: "eli4";
+    text-align: center;
+}
+
+.texto h5 {
+    font-size: 40px;
+}
