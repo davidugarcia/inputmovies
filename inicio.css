@@ -81,6 +81,14 @@ h1 a:hover {
 }
 
 
+/*botones*/
+
+.boton-rojo {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+
 /*articulos*/
 
 .principal {

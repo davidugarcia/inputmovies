@@ -3,10 +3,24 @@
    <!--formulario-->
    <aside class="sidebar">
 
+      
+		
+
       <?php if(isset($_SESSION['usuario'])): ?>
          <div id="usuario-logueado" class="bloque">
-            <h3>Bienvenido, <?=$_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellido']; ?></h3>
+            <h3 class="text-center">Bienvenido, <?=$_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellido']; ?></h3>
          </div>
+         <!--botones de seseion-->
+         
+         <div class="d-flex flex-wrap justify-content-around mb-2">
+         <button type="button" class="btn btn-outline-success"><a href="crear-entradas.php" class="boton">Crear entradas</a></button>
+         <button type="button" class="btn btn-outline-success"><a href="crear-entradas.php" class="boton">Crear entradas</a></button>
+         </div>
+         <div class="d-flex flex-wrap justify-content-around">
+         <button type="button" class="btn btn-outline-primary"><a href="mis-datos.php" class="boton">Mis datos</a></button>
+         <button type="button" class="btn btn-outline-danger"><a href="cerrar.php" class="boton">Cerrar sesión</a></button>
+         </div>
+         
       <?php endif; ?>
       
          
