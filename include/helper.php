@@ -10,7 +10,7 @@ if(isset($errores[$campo]) && !empty($campo)){
 return $alert;
 };
 
-//function para borrar errores
+//function para borrar errores de registrarte
 function borrarErrores(){
 	$borrado = false;
 	
@@ -26,7 +26,17 @@ function borrarErrores(){
 
 	return $borrado;
 }
+
+function Errores(){
+	$borrar = false;
+
+	// Borrar error de identificar
+	if(isset($_SESSION['error_login'])){
+		$_SESSION['error_login'] = null;
+		$borrado = true;
+   }
+	
+	return $borrar;
+};
    
 ?>
-
-

@@ -1,6 +1,6 @@
-   <?php  require_once 'include/helper.php'; ?>
+  <?php  require_once 'include/helper.php'; ?>
 
-   <!--form-->
+   <!--formulario-->
    <aside class="sidebar">
 
       <?php if(isset($_SESSION['usuario'])): ?>
@@ -11,12 +11,13 @@
       
          
          <!--identificar-->
+         <?php //if(!isset($_SESSION['usuario'])): ?>
          <div id="login" class="bloque">
             <h3>Identify</h3>
             
             <?php //alert de no estar registrado bien
                if(isset($_SESSION['error_login'])): ?>
-               <div class="alert alert-warning" role="alert">
+               <div class="alert alert-warning">
                   <?=$_SESSION['error_login'];?>
                </div>
 		      <?php endif; ?>
@@ -37,6 +38,8 @@
                </div>
                <button type="submit" value="enter" class="btn btn-primary mb-2">Confirm identity</button>
             </form>
+            <?php // function para borrar los errores file helper.php
+            Errores();?>
          </div>
 
          <!--registro-->
@@ -94,8 +97,7 @@
             </form>
 
             <?php // function para borrar los errores file helper.php
-          borrarErrores();
-          ?>
+            borrarErrores();?>
          </div>
-
+         <?php// endif; ?>         
    </aside>
