@@ -1,10 +1,5 @@
-  <?php  require_once 'include/helper.php'; ?>
-
    <!--formulario-->
    <aside class="sidebar">
-
-      
-		
 
       <?php if(isset($_SESSION['usuario'])): ?>
          <div id="usuario-logueado" class="bloque">
@@ -27,7 +22,7 @@
          <!--identificar-->
          <?php //if(!isset($_SESSION['usuario'])): ?>
          <div id="login" class="bloque">
-            <h3>Identify</h3>
+            <h3>Iniciar sesion</h3>
             
             <?php //alert de no estar registrado bien
                if(isset($_SESSION['error_login'])): ?>
@@ -59,7 +54,7 @@
          <!--registro-->
          <div id="registro" class="bloque">
 
-            <h3>Sing up</h3>
+            <h3>Registrate</h3>
 
             <!-- Mostrar errores -->
             <?php if(isset($_SESSION['errores']['general'])): ?>

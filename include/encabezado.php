@@ -1,4 +1,5 @@
 <?php require_once 'conexion.php'; ?>
+<?php  require_once 'include/helper.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +30,7 @@
    <header id="cabecera" class="text-center">
 
       <h1 id="logo">
-         <a href="inicio.php">BLog video juegos</a>
+         <a href="inicio.php">BLog Eliexer Urbina</a>
       </h1>
 
    </header>
@@ -40,18 +41,23 @@
          <li class="nav-item">
             <a class="nav-link active" href="#">Inicio</a>
          </li>
-         <li class="nav-item">
-            <a class="nav-link" href="#">Categoria 1</a>
-         </li>
-         <li class="nav-item">
-            <a class="nav-link" href="#">Categoria 2</a>
-         </li>
-         <li class="nav-item">
-            <a class="nav-link" href="#">Categoria 3</a>
-         </li>
-         <li class="nav-item">
-            <a class="nav-link" href="#">Categoria 4</a>
-         </li>
+
+            <?php 
+               // function con parametro de $con -- conexion.php
+					$categorias = conseguirCategorias($con);
+					if(!empty($categorias)):
+					while($category = mysqli_fetch_assoc($categorias)): 
+				?>
+                  <li class="nav-item">
+                     <a class="nav-link" href="categoria.php?id=<?=$category['id']?>">
+                     <?=$category['nombre']?>
+                     </a>
+                  </li>
+            <?php 
+               endwhile;
+               endif;
+				?>
+         
          <li class="nav-item">
             <a class="nav-link" href="#">Contactos</a>
          </li>

@@ -30,7 +30,7 @@ function borrarErrores(){
 function Errores(){
 	$borrar = false;
 
-	// Borrar error de identificar
+	// Borrar error de iniciar sesion
 	if(isset($_SESSION['error_login'])){
 		$_SESSION['error_login'] = null;
 		$borrado = true;
@@ -38,5 +38,19 @@ function Errores(){
 	
 	return $borrar;
 };
+
+// function de categorias --- encabezado * base de datos tabla categorias
+function conseguirCategorias($conectar){
+	$sql = "SELECT * FROM categorias ORDER BY id ASC;";
+	$categorias = mysqli_query($conectar, $sql);
+	
+	$resultado = array();
+	
+	if($categorias && mysqli_num_rows($categorias) >= 1){
+		$resultado = $categorias;
+	}
+	
+	return $resultado;
+}
    
 ?>
