@@ -32,7 +32,8 @@ if(isset($_POST)){
          //var_dump($_SESSION['usuario']);
          //die();
 		}else{
-			// Si algo falla enviar una sesión con el fallo
+
+			// Si algo falla enviar una sesión con la fallo
 			$_SESSION['error_login'] = "Login incorrectooo!!";
          //var_dump($_SESSION['error_login']);
       
@@ -40,7 +41,7 @@ if(isset($_POST)){
    } else{
       // mensaje de error
       $_SESSION['error_login'] = "Login incorrectoxxx!!";
-      var_dump($_SESSION['error_login']);
+      //var_dump($_SESSION['error_login']);
      
    }  
 };

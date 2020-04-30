@@ -1,30 +1,36 @@
    <!--formulario-->
    <aside class="sidebar">
 
+      <!-- crear una sesion si se inicia correctamente sesion
+      con datos existente en la base de datos-->
       <?php if(isset($_SESSION['usuario'])): ?>
          <div id="usuario-logueado" class="bloque">
             <h3 class="text-center">Bienvenido, <?=$_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellido']; ?></h3>
          </div>
+
          <!--botones de seseion-->
-         
          <div class="d-flex flex-wrap justify-content-around mb-2">
-         <button type="button" class="btn btn-outline-success"><a href="crear-entradas.php" class="boton">Crear entradas</a></button>
-         <button type="button" class="btn btn-outline-success"><a href="crear-entradas.php" class="boton">Crear entradas</a></button>
+            <button type="button" class="btn btn-outline-success"><a href="crear-entradas.php" class="boton">Crear entradas</a></button>
+            <button type="button" class="btn btn-outline-success"><a href="crear-entradas.php" class="boton">Crear entradas</a></button>
          </div>
          <div class="d-flex flex-wrap justify-content-around">
-         <button type="button" class="btn btn-outline-primary"><a href="mis-datos.php" class="boton">Mis datos</a></button>
-         <button type="button" class="btn btn-outline-danger"><a href="cerrar.php" class="boton">Cerrar sesión</a></button>
+            <button type="button" class="btn btn-outline-primary"><a href="mis-datos.php" class="boton">Mis datos</a></button>
+            <button type="button" class="btn btn-outline-danger"><a href="cerrar.php" class="boton">Cerrar sesión</a></button>
          </div>
          
       <?php endif; ?>
       
-         
-         <!--identificar-->
-         <?php //if(!isset($_SESSION['usuario'])): ?>
+         <!-- si existe una sesion con usuario
+          remueve los div identificar y registrarse 
+          hasta que cierre sesion se muestra -->
+         <?php if(!isset($_SESSION['usuario'])): ?>
+
+           <!--identificar-->
          <div id="login" class="bloque">
+
             <h3>Iniciar sesion</h3>
             
-            <?php //alert de no estar registrado bien
+            <?php //alert de no estar registrado  o error-- login.php linea 37 o 43  
                if(isset($_SESSION['error_login'])): ?>
                <div class="alert alert-warning">
                   <?=$_SESSION['error_login'];?>
@@ -47,21 +53,21 @@
                </div>
                <button type="submit" value="enter" class="btn btn-primary mb-2">Confirm identity</button>
             </form>
-            <?php // function para borrar los errores file helper.php
+            <?php // function para borrar los errores fila 31 helper.php
             Errores();?>
          </div>
 
-         <!--registro-->
+         <!--registrarse-->
          <div id="registro" class="bloque">
 
             <h3>Registrate</h3>
 
-            <!-- Mostrar errores -->
+            <!-- Mostrar error -- registro.php linea 72-->
             <?php if(isset($_SESSION['errores']['general'])): ?>
             <div class="alert alert-warning" role="alert">
                <?=$_SESSION['errores']['general']?>
             </div>
-
+            <!-- Mostrar error -- registro.php linea 70-->
             <?php elseif(isset($_SESSION['completado'])): ?>
             <div class="alert alert-success" role="alert">
                <?=$_SESSION['completado']?>
@@ -73,7 +79,7 @@
                <div class="form-group row">
                   <div class="col">
                      <input type="text" name="fname" class="form-control" placeholder="First name">
-                     <?php  //function muestra el error o vacio ---- file 4 helper.php
+                     <?php  //function muestra el error o nada - linea 4 helper.php
                         echo isset($_SESSION["errores"]) ? mostrarerror($_SESSION["errores"], "nombre") : "";
                      ?>
                   </div>
@@ -105,8 +111,9 @@
 
             </form>
 
-            <?php // function para borrar los errores file helper.php
+            <?php // function para borrar los errores fila 14 helper.php
             borrarErrores();?>
          </div>
-         <?php// endif; ?>         
+
+         <?php endif; ?>         
    </aside>
