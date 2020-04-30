@@ -8,13 +8,15 @@
             <h3 class="text-center">Bienvenido, <?=$_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellido']; ?></h3>
          </div>
 
-         <!--botones de seseion-->
+         <!--botones de sesion-->
          <div class="d-flex flex-wrap justify-content-around mb-2">
             <button type="button" class="btn btn-outline-success"><a href="crear-entradas.php" class="boton">Crear entradas</a></button>
-            <button type="button" class="btn btn-outline-success"><a href="crear-entradas.php" class="boton">Crear entradas</a></button>
+            <!--envia a crear categoria href="crearcategory.php"-->
+            <button type="button" class="btn btn-outline-success"><a href="crearcategory.php" class="boton">Crear categoria</a></button>
          </div>
          <div class="d-flex flex-wrap justify-content-around">
             <button type="button" class="btn btn-outline-primary"><a href="mis-datos.php" class="boton">Mis datos</a></button>
+            <!--envia a cerrar session href="cerrar.php"-->
             <button type="button" class="btn btn-outline-danger"><a href="cerrar.php" class="boton">Cerrar sesión</a></button>
          </div>
          
