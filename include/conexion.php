@@ -11,7 +11,7 @@ $con = new mysqli($host, $user, $password, $dbname, $port, $socket)
 	or die ('Could not connect to the database server' . mysqli_connect_error());
 
 
-   // Iniciar sesión ---  registro.php line 8
+   // Iniciar sesión ---  registro.php line 8 -- redireccion.php linea 4
 	if(!isset($_SESSION)){
 		session_start();
 	}

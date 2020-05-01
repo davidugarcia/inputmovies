@@ -10,7 +10,8 @@
 
          <!--botones de sesion-->
          <div class="d-flex flex-wrap justify-content-around mb-2">
-            <button type="button" class="btn btn-outline-success"><a href="crear-entradas.php" class="boton">Crear entradas</a></button>
+            <!--envia a crear categoria href="crearinputs.php"-->
+            <button type="button" class="btn btn-outline-success"><a href="crearinputs.php" class="boton">Crear entradas</a></button>
             <!--envia a crear categoria href="crearcategory.php"-->
             <button type="button" class="btn btn-outline-success"><a href="crearcategory.php" class="boton">Crear categoria</a></button>
          </div>

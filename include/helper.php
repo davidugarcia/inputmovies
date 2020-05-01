@@ -10,10 +10,21 @@ if(isset($errores[$campo]) && !empty($campo)){
 return $alert;
 };
 
-//function para borrar errores de registrarte
+// Borrar error de iniciar sesion loging.php
+function Errores(){
+	$borrar = false;	
+	if(isset($_SESSION['error_login'])){
+		$_SESSION['error_login'] = null;
+		$borrado = true;
+   }
+	return $borrar;
+};
+
+//function para borrar errores en campo de registrate
 function borrarErrores(){
 	$borrado = false;
 	
+	//borra errores de registrate registro.php
 	if(isset($_SESSION['errores'])){
 		$_SESSION['errores'] = null;
 		$borrado = true;
@@ -23,19 +34,15 @@ function borrarErrores(){
 		$_SESSION['completado'] = null;
 		$borrado = true;
 	}
+	//borra errores de crear entradas guardarinputs.php
+	if(isset($_SESSION['erroresinputs'])){
+		$_SESSION['erroresinputs'] = null;
+		$borrado = true;
+	}
 
 	return $borrado;
 }
 
-// Borrar error de iniciar sesion
-function Errores(){
-	$borrar = false;	
-	if(isset($_SESSION['error_login'])){
-		$_SESSION['error_login'] = null;
-		$borrado = true;
-   }
-	return $borrar;
-};
 
 // function de categorias --- encabezado.php * base de datos tabla categorias
 function conseguirCategorias($conectar){
@@ -57,7 +64,7 @@ function conseguirentradas($conectar){
 	
 	$sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e
 	 INNER JOIN categorias c ON e.categoriaid = c.id 
-	 ORDER BY e.id DESC LIMIT 5";
+	 ORDER BY e.id DESC";
 
 	$entrada = mysqli_query($conectar, $sql);
 	
