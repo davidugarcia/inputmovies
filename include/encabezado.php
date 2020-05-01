@@ -43,7 +43,7 @@
          </li>
 
             <?php 
-               // function con parametro de $con -- conexion.php
+               // function con parametro de variable $con conexion.php -- helper.php linea 48
 					$categorias = conseguirCategorias($con);
 					if(!empty($categorias)):
 					while($category = mysqli_fetch_assoc($categorias)): 

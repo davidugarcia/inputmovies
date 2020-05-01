@@ -55,7 +55,9 @@ function conseguirCategorias($conectar){
 		$resultado = $categorias;
 	}
 	
+	//regresa un true y consulta si hay conexion a database
 	return $resultado;
+	
 }
 
 /*mostrar datos de categoria y entradas base de datos
