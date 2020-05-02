@@ -40,6 +40,11 @@ function borrarErrores(){
 		$borrado = true;
 	}
 
+	if(isset($_SESSION['errorcategory'])){
+		$_SESSION['errorcategory'] = null;
+		$borrado = true;
+	}
+
 	return $borrado;
 }
 

@@ -16,10 +16,13 @@
             <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
             <div class="col-sm-10">
                <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+               <?php echo isset($_SESSION['errorcategory']) ? mostrarerror($_SESSION['errorcategory'], 'nombre') : ''; ?>
             </div>
       </div>   
       
       <button type="submit" value="guardar" class="btn btn-light mb-2">Guardar</button>        
    </form>
-
+   <?php borrarErrores(); ?>
 </div>
+
+<?php require_once 'include/pie.php'; ?>
