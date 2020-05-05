@@ -29,8 +29,8 @@
    <!--header pagina-->
    <header id="cabecera" class="text-center">
 
-      <h1 id="logo">
-         <a href="inicio.php">BLog Eliexer Urbina</a>
+      <h1 class = "logo">
+         BLog Eliexer Urbina.
       </h1>
 
    </header>

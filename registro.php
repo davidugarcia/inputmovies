@@ -40,6 +40,9 @@ if(isset($_POST)){
     //validar correo
    if(!empty($correo) &&  filter_var($correo, FILTER_VALIDATE_EMAIL)){
       $correo_validate = true;
+      $eli = filter_var($correo, FILTER_VALIDATE_EMAIL);
+      var_dump($eli);
+
    } else{
       $correo_validate = false;
       $errores["correo"] = "correo no valido";
@@ -65,6 +68,11 @@ if(isset($_POST)){
 		// insertar usuarios en la tabla de BBDD llamada inicio
 		$sql = "INSERT INTO usuarios VALUES(null, '$nombre', '$apellido', '$correo', '$password_segura', CURDATE());";
       $guardar = mysqli_query($con, $sql);
+
+      var_dump($guardar);
+      $elie = mysqli_fetch_assoc($guardar);
+      var_dump($elie);
+      //die();
       
       if($guardar){
 			$_SESSION['completado'] = "El registro se ha completado con éxito";

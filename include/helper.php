@@ -4,7 +4,7 @@
 function mostrarerror($errores, $campo){
    $alert ="";
 if(isset($errores[$campo]) && !empty($campo)){
-   $alert = '<div style = "margin: 5px"; class="alert alert-warning" role="alert">'. $errores[$campo] .'</div>';
+   $alert = '<div style = "margin: 5px"; class="alert alert-danger" role="alert">'. $errores[$campo] .'</div>';
 };
 
 return $alert;
@@ -45,6 +45,11 @@ function borrarErrores(){
 		$borrado = true;
 	}
 
+	if(isset($_SESSION['errordatos'])){
+		$_SESSION['errordatos'] = null;
+		$borrado = true;
+	}
+
 	return $borrado;
 }
 
@@ -67,11 +72,21 @@ function conseguirCategorias($conectar){
 
 /*mostrar datos de categoria y entradas base de datos
 inicio.php - base de datos tabla categorias y entradas*/
-function conseguirentradas($conectar){
+function conseguirentradas($conectar, $limit = null){
 	
 	$sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e
 	 INNER JOIN categorias c ON e.categoriaid = c.id 
 	 ORDER BY e.id DESC";
+	
+	if($limit){
+
+		$sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e
+	 INNER JOIN categorias c ON e.categoriaid = c.id 
+	 ORDER BY e.id DESC LIMIT 4";
+
+		// $sql = $sql." LIMIT 4";
+			// no pude realizar este trozo de script   $sql .= "LIMIT 4";
+	}
 
 	$entrada = mysqli_query($conectar, $sql);
 	

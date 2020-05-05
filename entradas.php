@@ -10,10 +10,10 @@
    
    <div class="principal">
 
-      <h2 class="text-center">Entradas</h2>
+      <h2 class="text-center">Todas las entradas</h2>
 
       <?php // function -- helper.php linea 54
-         $entradas = conseguirentradas($con, true);
+         $entradas = conseguirentradas($con);
          if(!empty($entradas)):
          while($entrada = mysqli_fetch_assoc($entradas)):
       ?>
@@ -31,12 +31,6 @@
 			endwhile;
 		   endif;
 	   ?>
-
-         <div class="verentradas"> 
-            <a href="entradas.php">
-               <button type="button" class="btn btn-outline-secondary">Ver entradas</button>
-            </a>
-         </div>
    </div>
 
    <!--footer-->
