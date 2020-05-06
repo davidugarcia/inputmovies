@@ -12,14 +12,16 @@
 
       <h2 class="text-center">Entradas</h2>
 
-      <?php // function -- helper.php linea 54
+      <?php // function -- helper.php devuelve solo 4 entradas
          $entradas = conseguirentradas($con, true);
          if(!empty($entradas)):
          while($entrada = mysqli_fetch_assoc($entradas)):
       ?>
       
          <article>
-            <a class ="link" href="entrada.php?id=<?=$entrada['id']?>">
+            <!-- devuelve los datos de la tabla entradas y al dar click
+               en un categoria nos muestra las entradas relacionadas con la categoria-->
+            <a class ="link" href="categoria.php?id=<?=$entrada['id']?>">
                <h2><?=$entrada['titulo']?></h2>
                <span class=""><?=$entrada['Categoria'].' | '.$entrada['fecha']?></span>
 
@@ -31,7 +33,7 @@
 			endwhile;
 		   endif;
 	   ?>
-
+         <!--nos envia hacia el archivo entradas.php-->
          <div class="verentradas"> 
             <a href="entradas.php">
                <button type="button" class="btn btn-outline-secondary">Ver entradas</button>

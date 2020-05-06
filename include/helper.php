@@ -1,6 +1,6 @@
 <?php 
 
-//mostrar error de campos vacios de registro
+//mostrar div de error de campos vacios de iniciar session o registrarse 
 function mostrarerror($errores, $campo){
    $alert ="";
 if(isset($errores[$campo]) && !empty($campo)){
@@ -9,6 +9,8 @@ if(isset($errores[$campo]) && !empty($campo)){
 
 return $alert;
 };
+
+//----------------------------------------------------------------------------
 
 // Borrar error de iniciar sesion loging.php
 function Errores(){
@@ -20,7 +22,7 @@ function Errores(){
 	return $borrar;
 };
 
-//function para borrar errores en campo de registrate
+//function para borrar errores en campo de registrate, actualizar usuario, crear categoria y entradas.php
 function borrarErrores(){
 	$borrado = false;
 	
@@ -53,8 +55,9 @@ function borrarErrores(){
 	return $borrado;
 }
 
+//------------------------------------------------------------------------
 
-// function de categorias --- encabezado.php * base de datos tabla categorias
+// function de categorias --- encabezado.php muestra todas las categorias
 function conseguirCategorias($conectar){
 	$sql = "SELECT * FROM categorias ORDER BY id ASC;";
 	$categorias = mysqli_query($conectar, $sql);
@@ -70,16 +73,32 @@ function conseguirCategorias($conectar){
 	
 }
 
-/*mostrar datos de categoria y entradas base de datos
-inicio.php - base de datos tabla categorias y entradas*/
+/* muestra las entradas relacionadas con la categoria al dar click en una categoria 
+nos enlaza que escogimos*/
+function conseguirCategoria($conexion, $id){
+	$sql = "SELECT * FROM categorias WHERE id = $id; ";
+	$categoria = mysqli_query($conexion, $sql);
+	
+	$resultado = array();
+	if($categoria && mysqli_num_rows($categoria) >= 1){
+		$resultado = mysqli_fetch_assoc($categoria);
+	}
+	
+	return $resultado;
+}
+//---------------------------------------------------------------------------
+
+/*muestra las entradas*/
 function conseguirentradas($conectar, $limit = null){
 	
+	//consigue todas las entradas --- archivo entradas.php
 	$sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e
 	 INNER JOIN categorias c ON e.categoriaid = c.id 
 	 ORDER BY e.id DESC";
 	
 	if($limit){
 
+		// consigue solo 4 entradas -- inicio.php
 		$sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e
 	 INNER JOIN categorias c ON e.categoriaid = c.id 
 	 ORDER BY e.id DESC LIMIT 4";
@@ -98,5 +117,8 @@ function conseguirentradas($conectar, $limit = null){
 	
 	return $result;
 }
+
+
+
    
 ?>
