@@ -12,7 +12,7 @@
 
       <h2 class="text-center">Todas las entradas</h2>
 
-      <?php // function -- helper.php linea 54
+      <?php // function -- helper.php
          $entradas = conseguirentradas($con);
          if(!empty($entradas)):
          while($entrada = mysqli_fetch_assoc($entradas)):

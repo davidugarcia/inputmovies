@@ -89,18 +89,23 @@ function conseguirCategoria($conexion, $id){
 //---------------------------------------------------------------------------
 
 /*muestra las entradas*/
-function conseguirentradas($conectar, $limit = null){
+function conseguirentradas($conectar, $limit = null, $category = null){
 	
 	//consigue todas las entradas --- archivo entradas.php
 	$sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e
 	 INNER JOIN categorias c ON e.categoriaid = c.id 
 	 ORDER BY e.id DESC";
-	
+
+if(!empty($category)){
+	$sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e
+	INNER JOIN categorias c ON e.categoriaid = c.id WHERE e.categoriaid = $category ORDER BY e.id DESC";
+}
+
 	if($limit){
 
 		// consigue solo 4 entradas -- inicio.php
 		$sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e
-	 INNER JOIN categorias c ON e.categoriaid = c.id 
+	 INNER JOIN categorias c ON e.categoriaid = c.id
 	 ORDER BY e.id DESC LIMIT 4";
 
 		// $sql = $sql." LIMIT 4";
@@ -110,7 +115,6 @@ function conseguirentradas($conectar, $limit = null){
 	$entrada = mysqli_query($conectar, $sql);
 	
 	$result = array();
-	
 	if($entrada && mysqli_num_rows($entrada) >= 1){
 		$result = $entrada;
 	}

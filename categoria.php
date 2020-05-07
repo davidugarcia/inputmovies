@@ -17,14 +17,14 @@
      
 	   <h2 class="text-center">Entradas de <?=$categoria_actual['nombre']?></h2>
 	
-      <?php // function -- helper.php linea 54
-         $entradas = conseguirentradas($con, true);
-         if(!empty($entradas)):
+      <?php // function -- helper.php
+         $entradas = conseguirentradas($con, null, $_GET['id']);
+         if(!empty($entradas) && mysqli_num_rows($entradas) >= 1):
          while($entrada = mysqli_fetch_assoc($entradas)):
       ?>
       
          <article>
-            <a class ="link" href=".php?id=<?=$entrada['id']?>">
+            <a class ="link" href="">
                <h2><?=$entrada['titulo']?></h2>
                <span class=""><?=$entrada['Categoria'].' | '.$entrada['fecha']?></span>
 
@@ -33,8 +33,11 @@
          </article>
 
 	   <?php
-			endwhile;
-		   endif;
+         endwhile;
+      else:
+         ?>
+            <div class="alert alert-secondary" role="alert">No hay entradas en esta categoría</div>
+            <?php endif;
 	   ?>
 </div>	
 <?php require_once 'include/pie.php'; ?>
