@@ -23,14 +23,19 @@
          </h2>
 	   </a>
 
-	   <h4> <?=$entrada_actual['fecha']?> </h4>
+	   <h4> <?=$entrada_actual['fecha']?> | <?=$entrada_actual['uxuario']?> </h4>
 
 	<p>
 		<?=$entrada_actual['descripcion']?>
 	</p>
     
+   <?php if(isset($_SESSION["usuario"]) && $_SESSION['usuario']['id'] == $entrada_actual['usuarioid']): ?>
+		<br/>	
 
-	
+		<a href="editarentrada.php?id=<?=$entrada_actual['id']?>" type="button" class="btn btn-dark">Editar entrada</a>
+		<a href="borrarentrada.php?id=<?=$entrada_actual['id']?>" type="button" class="btn btn-danger" >Eliminar entrada</a>
+      
+	<?php endif; ?>
       
 </div>	
 <?php require_once 'include/pie.php'; ?>

@@ -100,7 +100,8 @@ function conseguirentradas($conectar, $limit = null, $category = null){
 	if(!empty($category)){
 		// consigue todas las entradas relacionadas con la categoria elegida-----categoria.php
 		$sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e
-		INNER JOIN categorias c ON e.categoriaid = c.id WHERE e.categoriaid = $category ORDER BY e.id DESC";
+		INNER JOIN categorias c ON e.categoriaid = c.id WHERE 
+		e.categoriaid = $category ORDER BY e.id DESC";
 	}
 
 	if($limit){
@@ -126,8 +127,11 @@ function conseguirentradas($conectar, $limit = null, $category = null){
 
 function conseguirentrada($conexion, $id){
 
-	$sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e 
+	$sql = "SELECT e.*, c.nombre AS 'Categoria',
+	CONCAT (u.nombre, ' ', u.apellido) AS 'uxuario'
+	FROM entradas e 
 	INNER JOIN categorias c ON e.categoriaid = c.id 
+	INNER JOIN usuarios u ON e.usuarioid = u.id
 	WHERE e.id = $id";
 
 	$entrada = mysqli_query($conexion, $sql);
