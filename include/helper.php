@@ -90,7 +90,7 @@ function conseguirCategoria($conexion, $id){
 //---------------------------------------------------------------------------
 
 /*muestra las entradas*/
-function conseguirentradas($conectar, $limit = null, $category = null){
+function conseguirentradas($conectar, $limit = null, $category = null, $busqueda = null){
 	
 	//consigue todas las entradas --- archivo entradas.php
 	$sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e
@@ -102,6 +102,13 @@ function conseguirentradas($conectar, $limit = null, $category = null){
 		$sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e
 		INNER JOIN categorias c ON e.categoriaid = c.id WHERE 
 		e.categoriaid = $category ORDER BY e.id DESC";
+	}
+
+	if(!empty($busqueda)){
+		// busca todas los datos relacionadas ala variable $busqueda elegida-----buscar.php
+		$sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e
+		INNER JOIN categorias c ON e.categoriaid = c.id 
+		WHERE e.titulo like '%$busqueda%' ";
 	}
 
 	if($limit){
