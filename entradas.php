@@ -19,7 +19,7 @@
       ?>
       
          <article>
-            <a class ="link" href=".php?id=<?= $entrada['id']?>">
+            <a class ="link" href="entrada.php?id=<?= $entrada['id']?>">
                <h2><?=$entrada['titulo']?></h2>
                <span class=""><?=$entrada['Categoria'].' | '.$entrada['fecha']?></span>
 

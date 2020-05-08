@@ -3,11 +3,11 @@
 //mostrar div de error de campos vacios de iniciar session o registrarse 
 function mostrarerror($errores, $campo){
    $alert ="";
-if(isset($errores[$campo]) && !empty($campo)){
-   $alert = '<div style = "margin: 5px"; class="alert alert-danger" role="alert">'. $errores[$campo] .'</div>';
-};
+	if(isset($errores[$campo]) && !empty($campo)){
+		$alert = '<div style = "margin: 5px"; class="alert alert-danger" role="alert">'. $errores[$campo] .'</div>';
+	};
 
-return $alert;
+	return $alert;
 };
 
 //----------------------------------------------------------------------------
@@ -59,6 +59,7 @@ function borrarErrores(){
 
 // function de categorias --- encabezado.php muestra todas las categorias
 function conseguirCategorias($conectar){
+
 	$sql = "SELECT * FROM categorias ORDER BY id ASC;";
 	$categorias = mysqli_query($conectar, $sql);
 	
@@ -96,10 +97,11 @@ function conseguirentradas($conectar, $limit = null, $category = null){
 	 INNER JOIN categorias c ON e.categoriaid = c.id 
 	 ORDER BY e.id DESC";
 
-if(!empty($category)){
-	$sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e
-	INNER JOIN categorias c ON e.categoriaid = c.id WHERE e.categoriaid = $category ORDER BY e.id DESC";
-}
+	if(!empty($category)){
+		// consigue todas las entradas relacionadas con la categoria elegida-----categoria.php
+		$sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e
+		INNER JOIN categorias c ON e.categoriaid = c.id WHERE e.categoriaid = $category ORDER BY e.id DESC";
+	}
 
 	if($limit){
 
@@ -112,13 +114,29 @@ if(!empty($category)){
 			// no pude realizar este trozo de script   $sql .= "LIMIT 4";
 	}
 
-	$entrada = mysqli_query($conectar, $sql);
+	$entradas = mysqli_query($conectar, $sql);
+	
+	$result = array();
+	if($entradas && mysqli_num_rows($entradas) >= 1){
+		$result = $entradas;
+	}
+	
+	return $result;
+};
+
+function conseguirentrada($conexion, $id){
+
+	$sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e 
+	INNER JOIN categorias c ON e.categoriaid = c.id 
+	WHERE e.id = $id";
+
+	$entrada = mysqli_query($conexion, $sql);
 	
 	$result = array();
 	if($entrada && mysqli_num_rows($entrada) >= 1){
-		$result = $entrada;
+		$result = mysqli_fetch_assoc($entrada);;
 	}
-	
+
 	return $result;
 }
 

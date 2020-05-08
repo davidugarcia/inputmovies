@@ -21,7 +21,7 @@
          <article>
             <!-- devuelve los datos de la tabla entradas y al dar click
                en un categoria nos muestra las entradas relacionadas con la categoria-->
-            <a class ="link" href="categoria.php?id=<?=$entrada['id']?>">
+            <a class ="link" href="entrada.php?id=<?=$entrada['id']?>">
                <h2><?=$entrada['titulo']?></h2>
                <span class=""><?=$entrada['Categoria'].' | '.$entrada['fecha']?></span>
 
