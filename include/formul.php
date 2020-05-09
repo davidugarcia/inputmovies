@@ -27,13 +27,6 @@
 
             <h3>Buscar en sesion</h3>
 
-            <?php //alert 
-               if(isset($_SESSION['error_login'])): ?>
-               <div class="alert alert-warning">
-                  <?=$_SESSION['error_login'];?>
-               </div>
-            <?php endif;?>
-
             <form action="buscar.php" method="POST">
                <div class="form-group row">
                   <label for="" class="col-sm-2 col-form-label">Buscar</label>
