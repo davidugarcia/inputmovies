@@ -63,7 +63,7 @@
                   </div>
                <?php endif; ?>
 
-               <form action="login.php" method="POST">
+               <form action="codigo/login.php" method="POST">
                   <div class="form-group row">
                      <label for="email" class="col-sm-2 col-form-label">Email</label>
                      <div class="col-sm-10">
@@ -100,7 +100,7 @@
                </div>
                <?php endif; ?>
 
-               <form action="registro.php" method="POST">
+               <form action="codigo/registro.php" method="POST">
 
                   <div class="form-group row">
                      <div class="col">

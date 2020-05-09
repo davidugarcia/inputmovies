@@ -3,9 +3,9 @@
 if(isset($_POST)){
 
    // Conexión a la base de datos
-   require_once 'include/conexion.php';
+   require_once '../include/conexion.php';
    
-   // Iniciar sesión --- conexion.php line 15
+   // Iniciar sesión --- conexion.php
 	if(!isset($_SESSION)){
 		session_start();
 	}
@@ -87,5 +87,5 @@ if(isset($_POST)){
   
 };
 
-header("location: inicio.php");
+header("location: ../inicio.php");
 ?>

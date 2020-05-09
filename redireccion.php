@@ -1,6 +1,6 @@
 <?php
 
-// al iniciar sesion cuando se va crear una categoria o entradas
+// al iniciar sesion cuando se va crear una categoria, crear o editar entrada o editar usuario
 if(!isset($_SESSION)){
 	session_start();
 }
