@@ -1,7 +1,7 @@
    <!--formulario-->
    <aside class="sidebar">
 
-      <!-- crear una sesion si se inicia correctamente sesion
+      <!-- crea un div de sesion si se inicia correctamente la sesion
       con datos existente en la base de datos-->
       <?php if(isset($_SESSION['usuario'])): ?>
          <div id="" class="bloque">
@@ -10,16 +10,16 @@
 
          <!--botones de sesion-->
          <div class="d-flex flex-wrap justify-content-around mb-2">
-            <!--envia a crear categoria href="crearinputs.php"-->
+            <!--envia a crear categoria href=""-->
             <a href="crearinputs.php" class="boton"><button type="button" class="btn btn-outline-success">Crear entradas</button></a>
-            <!--envia a crear categoria href="crearcategory.php"-->
+            <!--envia a crear categoria href=""-->
             <a href="crearcategory.php" class="boton"><button type="button" class="btn btn-outline-success">Crear categoria</button></a>
          </div>
          <div class="d-flex flex-wrap justify-content-around">
-             <!--envia a actualizar session href="mydatos.php"-->
+             <!--envia a actualizar session href="-->
             <a href="mydatos.php" class="boton"><button type="button" class="btn btn-outline-primary">Mis datos</button></a>
-            <!--envia a cerrar session href="cerrar.php"-->
-            <a href="cerrar.php" class="boton"><button type="button" class="btn btn-outline-danger">Cerrar sesión</button></a>
+            <!--envia a cerrar session href="codigo/cerrar.php"-->
+            <a href="codigo/cerrar.php" class="boton"><button type="button" class="btn btn-outline-danger">Cerrar sesión</button></a>
          </div>
 
          <!--buscar en sesion-->
@@ -43,10 +43,6 @@
          
       <?php endif; ?>
       
-
-
-
-
 
 
 

@@ -11,7 +11,7 @@
 
    <h2 class="text-center">Categoria</h2>
 
-   <form action="guardarcateg.php" method="POST">
+   <form action="codigo/guardarcateg.php" method="POST">
       <div class="form-group row">
             <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
             <div class="col-sm-10">

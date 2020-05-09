@@ -2,7 +2,7 @@
 
 if(isset($_POST)){
 	// Conexión a la base de datos
-	require_once 'include/conexion.php';
+	require_once '../include/conexion.php';
 	
 	$nombre = isset($_POST['nombre']) ? mysqli_real_escape_string($con, $_POST['nombre']) : false;
 	
@@ -21,10 +21,10 @@ if(isset($_POST)){
 	if(count($errores) == 0){
 		$sql = "INSERT INTO categorias VALUES(NULL, '$nombre');";
 		$guardar = mysqli_query($con, $sql);
-		header("Location: inicio.php");
+		header("Location: ../inicio.php");
 	}else{
 		$_SESSION["errorcategory"] = $errores;
-		header("Location: crearcategory.php");
+		header("Location: ../crearcategory.php");
 	}
 }
 

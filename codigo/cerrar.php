@@ -5,6 +5,6 @@ if(isset($_SESSION['usuario'])){
 	session_destroy();
 }
 
-header("Location: inicio.php");
+header("Location: ../inicio.php");
 
 ?>
