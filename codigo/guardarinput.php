@@ -2,7 +2,7 @@
 
 if(isset($_POST)){
 	
-	require_once 'include/conexion.php';
+	require_once '../include/conexion.php';
 
 
 	$titulo = isset($_POST['title']) ? mysqli_real_escape_string($con, $_POST['title']) : false;
@@ -47,17 +47,17 @@ if(isset($_POST)){
 		
       $sql = "INSERT INTO entradas VALUES(null, $usuario, $categoria, '$titulo', '$descripcion', CURDATE());";
 		}
-//die();
+
 		$guardar = mysqli_query($con, $sql);
-      header("Location: inicio.php");
+      header("Location: ../inicio.php");
 
    }else{
 		$_SESSION["erroresinputs"] = $errores;
 
 		if(isset($_GET['editar'])){
-			header("Location: editarentrada.php?id=".$_GET['editar']);
+			header("Location: ../editarentrada.php?id=".$_GET['editar']);
 		}else{
-			header("Location: crearinputs.php");
+			header("Location: ../crearinputs.php");
 		}
 	}
 }

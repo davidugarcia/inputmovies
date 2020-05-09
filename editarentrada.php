@@ -21,7 +21,7 @@
 		Edita tu entrada <?=$entrada_actual['titulo']?>.
 	</p>
 
-   <form action="guardarinput.php?editar=<?=$entrada_actual['id']?>" method="POST" class="was-validated">
+   <form action="codigo/guardarinput.php?editar=<?=$entrada_actual['id']?>" method="POST" class="was-validated">
    
 
       <div class="form-group row">

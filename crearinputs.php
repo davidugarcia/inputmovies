@@ -7,13 +7,13 @@
 
 <div class="principal">
 
-   <h2 class="text-center">Entradas</h2>
+   <h2 class="text-center">Crear entradas</h2>
    <p>
 		Añade nuevas entradas al blog para que los usuarios puedan
 		leerlas y disfrutar de nuestro contenido.
 	</p>
 
-   <form action="guardarinput.php" method="POST" class="was-validated">
+   <form action="codigo/guardarinput.php" method="POST" class="was-validated">
    
 
       <div class="form-group row">
