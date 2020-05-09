@@ -43,12 +43,14 @@
          </li>
 
             <?php 
-               // function con parametro de variable $con conexion.php -- helper.php linea 48
+               // function ubicada en helper.php con parametro de variable $con conexion.php
+               // function recibe todos los campos de la tabla categorias
 					$categorias = conseguirCategorias($con);
 					if(!empty($categorias)):
 					while($category = mysqli_fetch_assoc($categorias)): 
 				?>
                   <li class="nav-item">
+                     <!--realiza enlace hacia el archivo con la url categoria.php?id= -->
                      <a class="nav-link" href="categoria.php?id=<?=$category['id']?>">
                      <?=$category['nombre']?>
                      </a>

@@ -2,12 +2,13 @@
 <?php require_once 'include/helper.php'; ?>
 
 <?php
-      // $_GET['id'] 
-         $entrada_actual = conseguirentrada($con, $_GET['id']);
-         if(!isset($entrada_actual['id'])){
-            header("Location: inicio.php");
-         }
-      ?>
+	/* function recibe los campos de la tabla categorias, entradas y usuarios por medio de la relacion
+	$_GET['id'] como parametro, este parametro se origina al dar click en un elemento del nav -- helper.php*/
+   $entrada_actual = conseguirentrada($con, $_GET['id']);
+   if(!isset($entrada_actual['id'])){
+   header("Location: inicio.php");
+    }
+?>
 
 <?php require_once 'include/encabezado.php'; ?>
 <?php require_once 'include/formul.php'; ?>
@@ -33,7 +34,7 @@
 		<br/>	
 
 		<a href="editarentrada.php?id=<?=$entrada_actual['id']?>" type="button" class="btn btn-dark">Editar entrada</a>
-		<a href="borrarentrada.php?id=<?=$entrada_actual['id']?>" type="button" class="btn btn-danger" >Eliminar entrada</a>
+		<a href="codigo/borrarentrada.php?id=<?=$entrada_actual['id']?>" type="button" class="btn btn-danger" >Eliminar entrada</a>
       
 	<?php endif; ?>
       

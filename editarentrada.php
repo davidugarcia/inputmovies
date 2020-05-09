@@ -47,7 +47,7 @@
             <select name="category" class="custom-select">   
                <option value=""></option>      
                <?php 
-                  // function declarada en guardar helper.php
+                  // function declarada en helper.php
                   $categorias = conseguirCategorias($con); 
                   if(!empty($categorias)):
                   while($categoria = mysqli_fetch_assoc($categorias)): 
