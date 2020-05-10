@@ -1,13 +1,22 @@
 <?php
+//este archivo es require en lo archivos 
+		/*editarentrada.php
+		 crearinputs.php
+		 mydatos.php
+		 crearcategory.php*/
 
-// al iniciar sesion cuando se va crear una categoria, crear o editar entrada o editar usuario
+		 
+/*condicion 
+si session existe sera !true = false
+ sisession no existe sera !false = true*/
+
 if(!isset($_SESSION)){
 	session_start();
 }
 
-if(!isset($_SESSION['usuario'])){
+/*if(!isset($_SESSION['usuario'])){
 	header("Location: inicio.php");
-}
+}*/
 
 
 ?>
