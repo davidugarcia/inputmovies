@@ -8,7 +8,7 @@ if(isset($_POST)){
 	$titulo = isset($_POST['title']) ? mysqli_real_escape_string($con, $_POST['title']) : false;
 	$descripcion = isset($_POST['descripcion']) ? mysqli_real_escape_string($con, $_POST['descripcion']) : false;
 	$categoria = isset($_POST['category']) ? (int)$_POST['category'] : false;
-   $usuario = $_SESSION['usuario']['id'];
+	$usuario = $_SESSION['usuario']['id'];
 	var_dump($_POST["title"]);
 	var_dump($_POST["descripcion"]);
 	var_dump($_POST["category"]);
