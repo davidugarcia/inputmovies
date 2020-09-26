@@ -64,13 +64,14 @@
                <?php endif; ?>
 
                <form action="codigo/login.php" method="POST">
+                  <!--Email-->
                   <div class="form-group row">
                      <label for="email" class="col-sm-2 col-form-label">Email</label>
                      <div class="col-sm-10">
                         <input type="text" class="form-control" id="Email" name="email" placeholder="email@example.com">
                      </div>
                   </div>
-
+                  <!--Password-->
                   <div class="form-group row">
                      <label for="Password" class="col-sm-2 col-form-label">Password</label>
                      <div class="col-sm-10">

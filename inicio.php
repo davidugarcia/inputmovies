@@ -34,7 +34,7 @@
 		   endif;
 	   ?>
          <!--nos envia hacia el archivo entradas.php-->
-         <div class="verentradas"> 
+         <div class="verentradas">
             <a href="entradas.php">
                <button type="button" class="btn btn-outline-secondary">Ver entradas</button>
             </a>
