@@ -5,7 +5,7 @@
       // $_GET['id'] se obtiene por url al dar click en una categoria que esta en el lista nav
          $categoria_actual = conseguirCategoria($con, $_GET['id']);
          if(!isset($categoria_actual['id'])){
-            header("Location: inicio.php");
+            header("Location: index.php");
          }
       ?>
 

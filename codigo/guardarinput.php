@@ -49,7 +49,7 @@ if(isset($_POST)){
 		}
 
 		$guardar = mysqli_query($con, $sql);
-      header("Location: ../inicio.php");
+      header("Location: ../index.php");
 
    }else{
 		$_SESSION["erroresinputs"] = $errores;

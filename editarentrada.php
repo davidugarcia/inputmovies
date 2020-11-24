@@ -6,7 +6,7 @@
       // $_GET['id'] 
          $entrada_actual = conseguirentrada($con, $_GET['id']);
          if(!isset($entrada_actual['id'])){
-            header("Location: inicio.php");
+            header("Location: index.php");
          }
       ?>
 

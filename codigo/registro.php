@@ -87,5 +87,5 @@ if(isset($_POST)){
   
 };
 
-header("location: ../inicio.php");
+header("location: ../index.php");
 ?>

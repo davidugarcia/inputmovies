@@ -11,4 +11,4 @@ if(isset($_SESSION['usuario']) && isset($_GET['id'])){
 	$borrar = mysqli_query($con, $sql);
 }
 
-header("Location: ../inicio.php");
+header("Location: ../index.php");

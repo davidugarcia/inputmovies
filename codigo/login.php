@@ -47,5 +47,5 @@ if(isset($_POST)){
 };
 
 // Redirigir al inicio.php
-header('Location: ../inicio.php');
+header('Location: ../index.php');
 ?>

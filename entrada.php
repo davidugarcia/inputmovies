@@ -6,7 +6,7 @@
 	$_GET['id'] como parametro, este parametro se origina al dar click en un elemento del nav -- helper.php*/
    $entrada_actual = conseguirentrada($con, $_GET['id']);
    if(!isset($entrada_actual['id'])){
-   header("Location: inicio.php");
+   header("Location: index.php");
     }
 ?>
 

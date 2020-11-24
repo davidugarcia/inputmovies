@@ -21,7 +21,7 @@ if(isset($_POST)){
 	if(count($errores) == 0){
 		$sql = "INSERT INTO categorias VALUES(NULL, '$nombre');";
 		$guardar = mysqli_query($con, $sql);
-		header("Location: ../inicio.php");
+		header("Location: ../index.php");
 	}else{
 		$_SESSION["errorcategory"] = $errores;
 		header("Location: ../crearcategory.php");

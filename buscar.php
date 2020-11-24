@@ -1,6 +1,6 @@
       <?php
          if(!isset($_POST['search'])){
-            header("Location: inicio.php");
+            header("Location: index.php");
          }
       ?>
 

@@ -39,7 +39,7 @@
    <nav id="menu">
       <ul class="nav justify-content-center">
          <li class="nav-item">
-            <a class="nav-link active" href="inicio.php">Inicio</a>
+            <a class="nav-link active" href="index.php">Inicio</a>
          </li>
 
             <?php 
