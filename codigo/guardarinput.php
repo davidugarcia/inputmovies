@@ -1,10 +1,7 @@
 <?php
 
 if(isset($_POST)){
-	
 	require_once '../include/conexion.php';
-
-
 	$titulo = isset($_POST['title']) ? mysqli_real_escape_string($con, $_POST['title']) : false;
 	$descripcion = isset($_POST['descripcion']) ? mysqli_real_escape_string($con, $_POST['descripcion']) : false;
 	$categoria = isset($_POST['category']) ? (int)$_POST['category'] : false;
@@ -49,8 +46,7 @@ if(isset($_POST)){
 		}
 
 		$guardar = mysqli_query($con, $sql);
-      header("Location: ../index.php");
-
+      header("Location:../index.php");
    }else{
 		$_SESSION["erroresinputs"] = $errores;
 

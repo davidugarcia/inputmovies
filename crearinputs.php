@@ -4,7 +4,6 @@
 <!--sidebar-->
 <!--formulario-->
 <?php require_once 'include/formul.php'; ?>
-
 <div class="principal">
 
    <h2 class="text-center">Crear entradas</h2>
@@ -60,5 +59,4 @@
    </form>
    <?php borrarErrores(); ?>
 </div>
-
 <?php require_once 'include/pie.php'; ?>

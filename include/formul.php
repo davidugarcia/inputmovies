@@ -3,7 +3,7 @@
 
       <!-- crea un div de sesion si se inicia correctamente la sesion
       con datos existente en la base de datos-->
-      <?php if(isset($_SESSION['usuario'])): ?>
+      <?php if(isset($_SESSION['usuario'])):?>
          <div id="" class="bloque">
             <h3 class="text-center">Bienvenido, <?=$_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellido']; ?></h3>
          </div>

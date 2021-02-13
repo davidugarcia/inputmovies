@@ -1,5 +1,4 @@
 <?php 
-
 //mostrar div de error de campos vacios de iniciar session o registrarse 
 function mostrarerror($errores, $campo){
    $alert ="";
@@ -150,8 +149,4 @@ function conseguirentrada($conexion, $id){
 
 	return $result;
 }
-
-
-
-   
 ?>

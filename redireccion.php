@@ -3,20 +3,14 @@
 		/*editarentrada.php
 		 crearinputs.php
 		 mydatos.php
-		 crearcategory.php*/
-
-		 
+		 crearcategory.php*/ 
 /*condicion 
 si session existe sera !true = false
  sisession no existe sera !false = true*/
-
 if(!isset($_SESSION)){
 	session_start();
 }
-
 /*if(!isset($_SESSION['usuario'])){
 	header("Location: inicio.php");
 }*/
-
-
 ?>

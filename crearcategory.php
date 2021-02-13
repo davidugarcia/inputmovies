@@ -1,12 +1,9 @@
 <?php require_once 'redireccion.php'; ?>
-
 <!--header-->
 <?php require_once 'include/encabezado.php'; ?>
-
 <!--sidebar-->
 <!--formulario-->
 <?php require_once 'include/formul.php'; ?>
-
 <div class="principal">
 
    <h2 class="text-center">Categoria</h2>
@@ -24,5 +21,4 @@
    </form>
    <?php borrarErrores(); ?>
 </div>
-
 <?php require_once 'include/pie.php'; ?>

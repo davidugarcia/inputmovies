@@ -2,7 +2,6 @@
    
 // Iniciar la sesión y la conexión a bd
 require_once '../include/conexion.php';
-
 // Recoger datos del formulario
 if(isset($_POST)){ 
    
@@ -45,7 +44,6 @@ if(isset($_POST)){
      
    }  
 };
-
 // Redirigir al inicio.php
 header('Location: ../index.php');
 ?>
