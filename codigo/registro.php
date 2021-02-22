@@ -5,9 +5,9 @@ if(isset($_POST)){
    // Conexión a la base de datos
    require_once '../include/conexion.php';
    // Iniciar sesión --- conexion.php
-	if(!isset($_SESSION)){
+	/*if(!isset($_SESSION)){
 		session_start();
-	}
+	}*/
 
    //recorger valores
    // ver si existen y escapar datos

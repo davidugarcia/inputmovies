@@ -1,5 +1,4 @@
 <?php require_once 'redireccion.php'; ?>
-<!--header-->
 <?php require_once 'include/encabezado.php'; ?>
 <!--sidebar-->
 <!--formulario-->

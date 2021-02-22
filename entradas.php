@@ -1,5 +1,3 @@
-<!--require_once sirven para poder segmentar un file-->
-<!--header-->
 <?php require_once 'include/encabezado.php'; ?>
 <!--sidebar-->
 <!--formulario-->

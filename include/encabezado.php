@@ -26,7 +26,7 @@
    <div class="container contenedor">
 
    <!--header pagina-->
-   <header id="cabecera" class="text-center">
+   <header id="" class="text-center">
 
       <h1 class = "logo">
          BLog Eliexer Urbina.

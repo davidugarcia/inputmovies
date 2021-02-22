@@ -11,4 +11,5 @@ $con = new mysqli($host, $user, $password, $dbname, $port, $socket)
   /* Iniciar sesión ---  registro.php -- redireccion.php linea*/
 if(!isset($_SESSION)){
 	session_start();
-}?>
+}
+?>

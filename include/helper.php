@@ -91,13 +91,13 @@ function conseguirCategoria($conexion, $id){
 /*muestra las entradas*/
 function conseguirentradas($conectar, $limit = null, $category = null, $busqueda = null){
 	
-	//consigue todas las entradas --- archivo entradas.php
+	//consigue todas las entradas del archivo entradas.php
 	$sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e
 	 INNER JOIN categorias c ON e.categoriaid = c.id 
 	 ORDER BY e.id DESC";
 
 	if(!empty($category)){
-		// consigue todas las entradas relacionadas con la categoria elegida-----categoria.php
+		// selecciona todas las entradas relacionadas con la categoria elegida-----categoria.php
 		$sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e
 		INNER JOIN categorias c ON e.categoriaid = c.id WHERE 
 		e.categoriaid = $category ORDER BY e.id DESC";

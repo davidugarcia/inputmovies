@@ -43,9 +43,6 @@
          
       <?php endif; ?>
       
-
-
-
          <!-- si existe una sesion con usuario
           remueve los div identificar y registrarse 
           hasta que cierre sesion se muestra -->
@@ -138,7 +135,7 @@
 
                </form>
 
-               <?php // function para borrar los errores fila 14 helper.php
+               <?php // function para borrar los errores fila 24 helper.php
                borrarErrores();?>
             </div>
 
