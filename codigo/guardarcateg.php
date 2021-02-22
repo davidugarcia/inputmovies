@@ -1,7 +1,6 @@
 <?php
 
 if(isset($_POST)){
-	// Conexión a la base de datos
 	require_once '../include/conexion.php';
 	$nombre = isset($_POST['nombre']) ? mysqli_real_escape_string($con, $_POST['nombre']) : false;
 	

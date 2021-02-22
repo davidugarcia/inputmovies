@@ -1,5 +1,4 @@
 <?php
-
 if(isset($_POST)){
 	require_once '../include/conexion.php';
 	$titulo = isset($_POST['title']) ? mysqli_real_escape_string($con, $_POST['title']) : false;

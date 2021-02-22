@@ -1,6 +1,4 @@
 <?php
-   
-// Iniciar la sesión y la conexión a bd
 require_once '../include/conexion.php';
 // Recoger datos del formulario
 if(isset($_POST)){ 

@@ -1,7 +1,6 @@
 <?php
 
 if(isset($_POST)){
-	// Conexión a la base de datos
 	require_once '../include/conexion.php';
    //recibir datos por post
 	$nombre = isset($_POST['name']) ? mysqli_real_escape_string($con, $_POST['name']) : false;
