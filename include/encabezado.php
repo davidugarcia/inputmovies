@@ -12,8 +12,8 @@
    <link rel="stylesheet" href="inicio.css">
 
    <!--boostrap-->
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
    <!--fontaawesome-->
    <script defer src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"
@@ -23,46 +23,63 @@
 
 <body>
 
-   <div class="container contenedor">
+   <div class="container">
 
-   <!--header pagina-->
-   <header id="" class="text-center">
+      <!--header-->
+      <header id="" class="text-center">
+         <h1 class="logo">
+            BLog Eliexer Urbina.
+         </h1>
+      </header>
 
-      <h1 class = "logo">
-         BLog Eliexer Urbina.
-      </h1>
+      <!--navbar-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <div class="container-fluid">
 
-   </header>
+            <a class="navbar-brand" href="index.php">Inicio</a>
 
-   <!--navbar-->
-   <nav id="menu">
-      <ul class="nav justify-content-center">
-         <li class="nav-item">
-            <a class="nav-link active" href="index.php">Inicio</a>
-         </li>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+               data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+               aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <?php 
-               // function ubicada en helper.php con parametro de variable $con conexion.php
-               // function recibe todos los campos de la tabla categorias
-					$categorias = conseguirCategorias($con);
-					if(!empty($categorias)):
-					while($category = mysqli_fetch_assoc($categorias)): 
-				?>
-                  <li class="nav-item">
-                     <!--realiza enlace hacia el archivo con la url categoria.php?id= -->
-                     <a class="nav-link" href="categoria.php?id=<?=$category['id']?>">
-                     <?=$category['nombre']?>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Categorias
                      </a>
-                  </li>
-            <?php 
-               endwhile;
-               endif;
-				?>
-         
-         <li class="nav-item">
-            <a class="nav-link" href="#">Contactos</a>
-         </li>
-      </ul>
-   </nav>
 
-   <div class="contenedor">
+                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <?php 
+                           // function ubicada en helper.php con parametro de variable $con conexion.php
+                           // function recibe todos los campos de la tabla categorias
+					            $categorias = conseguirCategorias($con);
+					            if(!empty($categorias)):
+					            while($category = mysqli_fetch_assoc($categorias)): 
+				            ?>
+                           <li><a class="dropdown-item" href="categoria.php?id=<?=$category['id']?>"><?=$category['nombre']?></a></li>
+                        <?php 
+                           endwhile;
+                           endif;
+				            ?>
+                     </ul>
+                  </li>
+
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">contacto</a>
+                  </li>
+
+               </ul>
+               <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Buscar</button>
+               </form>
+            </div>
+         </div>
+      </nav>
+
+      <div class="contenedor">

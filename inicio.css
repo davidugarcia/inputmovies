@@ -32,24 +32,16 @@
 }
 
 
-/*contenedor*/
-
-.contenedor {
-    min-height: auto;
-    margin: 5px auto;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-
-/*header pagina*/
+/*header*/
 
 .logo {
     font-family: "eli";
-    color: #d4a38c;
+    color: #d0ccc9fa;
     text-shadow: 0px 0px 0px black, 1px 1px 0px black, 2px 2px 0px black;
     font-size: 60px;
     text-decoration: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .logo:hover {
