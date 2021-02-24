@@ -26,60 +26,71 @@
    <div class="container">
 
       <!--header-->
-      <header id="" class="text-center">
-         <h1 class="logo">
-            BLog Eliexer Urbina.
-         </h1>
-      </header>
+      <div class="row ustify-content-lg-center">
+         <div class="col-lg-12">
 
-      <!--navbar-->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-         <div class="container-fluid">
+            <!--titulo-->
+            <header id="" class="text-center">
+               <h1 class="logo">
+                  BLog Eliexer Urbina.
+               </h1>
+            </header>
 
-            <a class="navbar-brand" href="index.php">Inicio</a>
+             <!--Nav-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <div class="container-fluid">
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-               data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-               aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-            </button>
+                  <a class="navbar-brand" href="index.php">Inicio</a>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                     aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                  </button>
 
-                  <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Categorias
-                     </a>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <?php 
+                        <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                              data-bs-toggle="dropdown" aria-expanded="false">
+                              Categorias
+                           </a>
+
+                           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <?php 
                            // function ubicada en helper.php con parametro de variable $con conexion.php
                            // function recibe todos los campos de la tabla categorias
 					            $categorias = conseguirCategorias($con);
 					            if(!empty($categorias)):
 					            while($category = mysqli_fetch_assoc($categorias)): 
 				            ?>
-                           <li><a class="dropdown-item" href="categoria.php?id=<?=$category['id']?>"><?=$category['nombre']?></a></li>
-                        <?php 
+                              <li><a class="dropdown-item"
+                                    href="categoria.php?id=<?=$category['id']?>"><?=$category['nombre']?></a></li>
+                              <?php 
                            endwhile;
                            endif;
 				            ?>
+                           </ul>
+                        </li>
+
+                        <li class="nav-item">
+                           <a class="nav-link" href="#">contacto</a>
+                        </li>
+
                      </ul>
-                  </li>
+                     <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                     </form>
+                  </div>
+               </div>
+            </nav>
 
-                  <li class="nav-item">
-                     <a class="nav-link" href="#">contacto</a>
-                  </li>
-
-               </ul>
-               <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Buscar</button>
-               </form>
-            </div>
          </div>
-      </nav>
+      </div>
+   </div>
 
-      <div class="contenedor">
+   <!--seccion-->
+
+   <div class="container-fluid">

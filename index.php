@@ -1,34 +1,38 @@
 <?php require_once 'include/encabezado.php'; ?>
 <?php require_once 'include/formul.php'; ?>
 
-<div class="container">
+<!--principal-->
 
-   <div class="row">
-      <div class="col-lg-12">
-      
-         <h2 class="text-center">Entradas</h2>
+   
+      <div class="order-1 col-lg-9">
 
-         <?php // function -- helper.php devuelve solo 4 entradas
-            $entradas = conseguirentradas($con, true);
-         if(!empty($entradas)):
-            while($entrada = mysqli_fetch_assoc($entradas)):
-         ?>
+         <h2 class="text-center titulo">Entradas</h2>
 
-            <article>
-               <!-- devuelve los datos de la tabla entradas y al dar click
-               en un categoria nos muestra las entradas relacionadas con la categoria-->
-               <a class="link" href="entrada.php?id=<?=$entrada['id']?>">
-                  <h2><?=$entrada['titulo']?></h2>
-                  <span class=""><?=$entrada['Categoria'].' | '.$entrada['fecha']?></span>
+         <div class="d-flex flex-wrap justify-content-around">
+            <?php // function -- helper.php devuelve solo 4 entradas
+               $entradas = conseguirentradas($con, true);
+            if(!empty($entradas)):
+               while($entrada = mysqli_fetch_assoc($entradas)):
+            ?>
 
-                  <p><?=substr($entrada['descripcion'], 0, 180)."..."?></p>
-               </a>
-            </article>
+               <div class="card" style="width: 19rem; margin:0.4rem">
+                  
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                     <h5 class="card-title"><?=$entrada['titulo']?></h5>
+                     <span class=""><?=$entrada['Categoria'].' | '.$entrada['fecha']?></span>
+                     <p class="card-text"><?=substr($entrada['descripcion'], 0, 180)."..."?></p>
+                     <a href="entrada.php?id=<?=$entrada['id']?>" class="btn btn-primary">Ver pelicula</a>
+                  </div>
+                  
+               </div>
 
-         <?php
-            endwhile;
-            endif;
-         ?>
+            <?php
+               endwhile;
+               endif;
+            ?>
+         </div>
+         
          <!--nos envia hacia el archivo entradas.php-->
          <div class="verentradas">
             <a href="entradas.php">
@@ -37,10 +41,6 @@
          </div>
 
       </div>
-
    </div>
-
-
-</div>
 <!--footer-->
 <?php require_once 'include/pie.php'; ?>

@@ -1,6 +1,3 @@
-   <div class="clear-fix"></div>
-   </div>
-
    <footer class="pie">
       <div class="row">
          <div class="col-lg-12">
@@ -23,7 +20,7 @@
 
    </footer>
 
-   </div>
+</div>
 
    <!--boostrap-->
    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
