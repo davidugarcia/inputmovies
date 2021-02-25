@@ -26,7 +26,7 @@
    <div class="container">
 
       <!--header-->
-      <div class="row ustify-content-lg-center">
+      <div class="row justify-content-lg-center">
          <div class="col-lg-12">
 
             <!--titulo-->

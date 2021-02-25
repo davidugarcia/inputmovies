@@ -46,21 +46,12 @@
 
 /*formulario*/
 
-.sidebar {
-    display: none;
-}
-
-.bloque {
-    display: block;
-    border-radius: 8px;
-    margin: 15px auto;
-    padding: 10px;
-    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3), 0px 0px 7px rgba(0, 0, 0, 0.3), 0px 0px 1px #ffffff inset, 0px -3px 2px rgba(0, 0, 0, 0.25) inset;
-    background-color: hsl(210, 100%, 97%);
-}
-
 .bloque h3 {
     font-family: "elie3";
+}
+
+.formulario {
+    margin-top: 67px;
 }
 
 

@@ -2,9 +2,7 @@
 <?php require_once 'include/formul.php'; ?>
 
 <!--principal-->
-
-   
-      <div class="order-1 col-lg-9">
+   <div class="order-1 col-lg-9">
 
          <h2 class="text-center titulo">Entradas</h2>
 
@@ -40,7 +38,8 @@
             </a>
          </div>
 
-      </div>
    </div>
+</div>
+  
 <!--footer-->
 <?php require_once 'include/pie.php'; ?>

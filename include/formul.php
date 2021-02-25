@@ -52,117 +52,124 @@
                remueve los div identificar y registrarse 
                hasta que cierre sesion se muestra -->
          <?php if(!isset($_SESSION['usuario'])): ?>
-             <!--iniciar sesion-->
-         <p>
-            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
-               aria-expanded="false" aria-controls="collapseExample">
-               iniciar sesion
-            </a>
-         </p>
-         <div class="collapse" id="collapseExample">
-           
-               <div id="login" class="bloque"> 
+            <div class="formulario">
 
-                  <h3>Iniciar sesion</h3>
+               <!--registrarse-->
+               <p>
+                  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample1" role="button"
+                     aria-expanded="false" aria-controls="collapseExample1">
+                     Registrate
+                  </a>
+               </p>
+               <div class="collapse" id="collapseExample1">
 
-                  <?php //alert de no estar registrado  o error-- login.php linea 37 o 43  
-                              if(isset($_SESSION['error_login'])): ?>
-                  <div class="alert alert-warning">
-                     <?=$_SESSION['error_login'];?>
-                  </div>
-                  <?php endif; ?>
+                  <div id="registro" class="">
 
-                  <form action="codigo/login.php" method="POST">
-                     <!--Email-->
-                     <div class="form-group row">
-                        <label for="email" class="col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-10">
-                           <input type="text" class="form-control" id="Email" name="email" placeholder="email@example.com">
+                     <h3>Registrate</h3>
+
+                     <!-- Mostrar error -- registro.php linea 72-->
+                     <?php if(isset($_SESSION['errores']['general'])): ?>
+                     <div class="alert alert-warning" role="alert">
+                        <?=$_SESSION['errores']['general']?>
+                     </div>
+                     <!-- Mostrar error -- registro.php linea 70-->
+                     <?php elseif(isset($_SESSION['completado'])): ?>
+                     <div class="alert alert-success" role="alert">
+                        <?=$_SESSION['completado']?>
+                     </div>
+                     <?php endif; ?>
+
+                     <form action="codigo/registro.php" method="POST">
+
+                        <div class="mb-3">
+                           <label for="text" class="form-label">Nombre</label>
+                           <div class="col-sm-10">
+                              <input type="text" name="fname" class="form-control" placeholder="Nombre">
+                              <?php  //function muestra el error o nada - linea 4 helper.php
+                                 echo isset($_SESSION["errores"]) ? mostrarerror($_SESSION["errores"], "nombre") : "";
+                              ?>
+                           </div>
                         </div>
-                     </div>
-                     <!--Password-->
-                     <div class="form-group row">
-                        <label for="Password" class="col-sm-2 col-form-label">Password</label>
-                        <div class="col-sm-10">
-                           <input type="password" name="pass" class="form-control" id="Password">
+
+                        <div class="mb-3">
+                           <label for="text" class="form-label">Apellido</label>
+                           <div class="col-sm-10">
+                              <input type="text" name="lname" class="form-control" placeholder="Apellido">
+                              <?php
+                                 echo isset($_SESSION["errores"]) ? mostrarerror($_SESSION["errores"], "apellido") : "";
+                              ?>
+                           </div>
                         </div>
-                     </div>
-                     <button type="submit" value="enter" class="btn btn-primary mb-2">Confirm identity</button>
-                  </form>
-                  <?php // function para borrar los errores fila 31 helper.php
-                           Errores();?>
-               </div>
-            
-         </div>
-         <!--registrarse-->
-         <p>
-            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample1" role="button"
-               aria-expanded="false" aria-controls="collapseExample1">
-               Registrate
-            </a>
-         </p>
-         <div class="collapse" id="collapseExample1">
-             
-            <div id="registro" class="bloque">
+                        
+                        <div class="mb-3">
+                           <label for="staticEmail" class="form-label">Correo</label>
+                           <div class="col-sm-10">
+                              <input type="email" name="email" class="form-control" id="staticEmail"  placeholder="correo@example.com">
+                              <?php echo isset($_SESSION["errores"]) ? mostrarerror($_SESSION["errores"], "correo") : ""; ?>
+                           </div>
+                        </div>
 
-               <h3>Registrate</h3>
+                        <div class="mb-3">
+                           <label for="inputPassword" class="form-label">Contraseña</label>
+                           <div class="col-sm-10">
+                              <input type="password" name="pass" class="form-control" id="inputPassword">
+                              <?php echo isset($_SESSION["errores"]) ? mostrarerror($_SESSION["errores"], "contra") : ""; ?>
+                           </div>
+                        </div>
 
-               <!-- Mostrar error -- registro.php linea 72-->
-               <?php if(isset($_SESSION['errores']['general'])): ?>
-               <div class="alert alert-warning" role="alert">
-                  <?=$_SESSION['errores']['general']?>
-               </div>
-               <!-- Mostrar error -- registro.php linea 70-->
-               <?php elseif(isset($_SESSION['completado'])): ?>
-               <div class="alert alert-success" role="alert">
-                  <?=$_SESSION['completado']?>
-               </div>
-               <?php endif; ?>
+                        <button type="submit" value="" class="btn btn-primary">Enviar</button>
 
-               <form action="codigo/registro.php" method="POST">
+                     </form>
 
-                  <div class="form-group row">
-                     <div class="col">
-                        <input type="text" name="fname" class="form-control" placeholder="First name">
-                        <?php  //function muestra el error o nada - linea 4 helper.php
-                                    echo isset($_SESSION["errores"]) ? mostrarerror($_SESSION["errores"], "nombre") : "";
-                                 ?>
-                     </div>
-
-                     <div class="col">
-                        <input type="text" name="lname" class="form-control" placeholder="Last name">
-                        <?php echo isset($_SESSION["errores"]) ? mostrarerror($_SESSION["errores"], "apellido") : ""; ?>
-                     </div>
+                     <?php // function para borrar los errores fila 24 helper.php
+                              borrarErrores();?>
                   </div>
+               </div>
 
-                  <div class="form-group row">
-                     <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                     <div class="col-sm-10">
-                        <input type="text" name="email" class="form-control" id="staticEmail"
-                           placeholder="email@example.com">
-                        <?php echo isset($_SESSION["errores"]) ? mostrarerror($_SESSION["errores"], "correo") : ""; ?>
-                     </div>
+                <!--iniciar sesion-->
+               <p class="mt-3">
+                  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                     aria-expanded="false" aria-controls="collapseExample">
+                     iniciar sesion
+                  </a>
+               </p>
+               <div class="collapse" id="collapseExample">
+                  <div id="login" class=""> 
+
+                        <h3>Iniciar sesion</h3>
+
+                        <?php //alert de no estar registrado  o error-- login.php linea 37 o 43  
+                                    if(isset($_SESSION['error_login'])): ?>
+                        <div class="alert alert-warning">
+                           <?=$_SESSION['error_login'];?>
+                        </div>
+                        <?php endif; ?>
+
+                        <form action="codigo/login.php" method="POST">
+                           <!--Correo-->
+                           <div class="mb-3">
+                              <label for="email" class="form-label">Correo</label>
+                              <div class="col-sm-10">
+                                 <input type="text" class="form-control" id="Email" name="email" placeholder="correo@example.com">
+                              </div>
+                           </div>
+                           <!--Contraseña-->
+                           <div class="mb-3">
+                              <label for="Password" class="form-label">Contraseña</label>
+                              <div class="col-sm-10">
+                                 <input type="password" name="pass" class="form-control" id="Password">
+                              </div>
+                           </div>
+                           <button type="submit" value="enter" class="btn btn-primary mb-2">Enviar</button>
+                        </form>
+                        <?php // function para borrar los errores fila 31 helper.php
+                                 Errores();?>
                   </div>
-
-                  <div class="form-group row">
-                     <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                     <div class="col-sm-10">
-                        <input type="password" name="pass" class="form-control" id="inputPassword">
-                        <?php echo isset($_SESSION["errores"]) ? mostrarerror($_SESSION["errores"], "contra") : ""; ?>
-                     </div>
-                  </div>
-
-                  <button type="submit" value="" class="btn btn-primary">Sign in</button>
-
-               </form>
-
-               <?php // function para borrar los errores fila 24 helper.php
-                        borrarErrores();?>
-         </div>
-        
-
+               </div>
+               
          <?php endif; ?>
 
       </div>
-
    </div>
+
+      
